@@ -8,6 +8,7 @@ export class AuthController {
 
   async login(req: Request, res: Response): Promise<void> {
     try {
+      console.log(req.body)
       const { email, password } = req.body;
       const loginRequest = { email, password };
       const loginResponse = await this.loginUseCase.execute(loginRequest);
